@@ -1,0 +1,15 @@
+.caja {
+    background-color: aquamarine;
+    border: 20px;
+    border-style: dotted;
+    width: auto;
+    margin: 50px 90px;
+    padding: 20px;
+    border-color: brown;
+    position: relative;
+    top: 10%;
+    bottom: 5%;
+    left: 30px;
+    width: 300px;
+    
+}

@@ -1,0 +1,46 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 30;
+    padding: 30;
+    background-color: #f0f0f0; /* Color gris claro */
+    
+}
+
+.navbar {
+    background-color: #333; /* Fondo oscuro */
+    padding: 10px 20px;
+}
+
+.nav-links {
+    list-style: none; /* Elimina los puntos de lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Para que los enlaces se alineen en una fila */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.nav-links li {
+    margin: 0 15px; /* Espaciado entre los enlaces */
+}
+
+.nav-links a {
+    color: white; /* Color de texto */
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 18px;
+    padding: 8px 16px; /* Espaciado alrededor del texto */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición para el hover */
+}
+
+.nav-links a:hover {
+    background-color: #555; /* Fondo más claro cuando pasa el mouse */
+}
+
+h2 {
+    color: rgb(78, 75, 25);
+}
+
+fieldset {
+    background-color: chocolate;
+}
