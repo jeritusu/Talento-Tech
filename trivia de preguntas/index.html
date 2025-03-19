@@ -4,85 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juego de Preguntas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            width: 400px;
-        }
-        .option {
-            display: block;
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            cursor: pointer;
-            background-color: white;
-        }
-        .option:hover {
-            background-color: #ddd;
-        }
-        .correct {
-            background-color: #8bc34a !important;
-        }
-        .incorrect {
-            background-color: #f44336 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
+
+
 <body>
+    <header>
+        <h1>Trivia de Preguntas</h1>
+    </header>
     <div class="container">
+        
         <h2 id="pregunta">Cargando pregunta...</h2>
         <div id="opciones"></div>
     </div>
-    <script>
-        async function obtenerPregunta() {
-            const URL = "https://opentdb.com/api.php?amount=1&category=21&difficulty=easy&type=multiple";
-            const respuesta = await fetch(URL);
-            const datos = await respuesta.json();
-            mostrarPregunta(datos.results[0]);
-        }
-
-        function mostrarPregunta(data) {
-            document.getElementById("pregunta").textContent = data.question;
-            let opciones = [...data.incorrect_answers, data.correct_answer];
-            opciones = opciones.sort(() => Math.random() - 0.5);
-
-            const contenedorOpciones = document.getElementById("opciones");
-            contenedorOpciones.innerHTML = "";
-            
-            opciones.forEach(opcion => {
-                const boton = document.createElement("button");
-                boton.textContent = opcion;
-                boton.classList.add("option");
-                boton.onclick = () => evaluarRespuesta(opcion, data.correct_answer, boton);
-                contenedorOpciones.appendChild(boton);
-            });
-        }
-
-        function evaluarRespuesta(seleccion, correcta, boton) {
-            if (seleccion === correcta) {
-                boton.classList.add("correct");
-                alert("¡Respuesta correcta!");
-            } else {
-                boton.classList.add("incorrect");
-                alert("Respuesta incorrecta. La correcta era: " + correcta);
-            }
-            setTimeout(obtenerPregunta, 2000);
-        }
-
-        obtenerPregunta();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
